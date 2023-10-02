@@ -78,9 +78,10 @@
             <TextView
                 android:id="@+id/tvlink"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:backgroundTint="#00000000"
                 android:text="Krish dobariya"
+                android:autoLink="web"
                 android:paddingLeft="10dp"/>
 
             <TextView

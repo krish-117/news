@@ -1,10 +1,10 @@
 package com.example.news;
 
 import android.content.Context;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +15,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.news.databinding.ActivityNewsScrollBinding;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
@@ -24,12 +23,14 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
     ArrayList<Integer> imglist;
     ArrayList<String> titlelist;
     ArrayList<String> articlelist;
+     ArrayList<String> newslink;
 
-    public AdapterClass(ArrayList<Integer> imglist, ArrayList<String> titlelist, ArrayList<String> articlelist) {
+    public AdapterClass(ArrayList<Integer> imglist, ArrayList<String> titlelist, ArrayList<String> articlelist, ArrayList<String> newslink) {
 
         this.imglist = imglist;
         this.titlelist = titlelist;
         this.articlelist = articlelist;
+        this.newslink = newslink;
     }
 
     @NonNull
@@ -62,6 +63,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
             binding.ivimg.setImageResource(imglist.get(position));
             binding.tvtitle.setText(titlelist.get(position));
             binding.tvarticle.setText(articlelist.get(position));
+            binding.tvlink.setText(newslink.get(position));
 
             Glide.with(context)
                     .load(imglist.get(position))
@@ -74,6 +76,9 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
                     .into(binding.ivwebblur);
+
+            binding.tvlink.setText(newslink.get(position));
+            Linkify.addLinks(binding.tvlink, Linkify.WEB_URLS);
 
         }
     }

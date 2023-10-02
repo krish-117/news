@@ -22,6 +22,7 @@ public class Feed extends Fragment {
     ArrayList<Integer> imglist = new ArrayList<>();
     ArrayList<String> titlelist = new ArrayList<>();
     ArrayList<String> articlelist = new ArrayList<>();
+    ArrayList<String> newslink = new ArrayList<>();
     String title,article;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class Feed extends Fragment {
                 "His remark came in the wake of a recent order of the Canadian government which makes it compulsory for online streaming services to formally register with the government for 'regulatory controls'.\n" +
                 "\n";
         articlelist.add(article);
+        newslink.add("https://www.ndtv.com/world-news/elon-musk-justin-trudeau-crushing-free-speech-online-streaming-services-podcasts-registration-compulsory-with-government-4441582");
 
         imglist.add(R.drawable.img2);
         title = "Bugs, Apps, Software: Apple Lists Reasons Behind iPhone 15 Overheating";
@@ -62,14 +64,16 @@ public class Feed extends Fragment {
                 "\n" +
                 "\"The device may feel warmer during the first few days after setting up or restoring the device because of increased background activity,\" Apple said in a statement.";
         articlelist.add(article);
+        newslink.add("https://www.ndtv.com/world-news/bugs-apps-software-apple-lists-reasons-behind-iphone-overheating-4441842");
 
         imglist.add(R.drawable.img3);
         title = "‘Scam 2003 - The Telgi Story’ series review: A real fake";
         titlelist.add(title);
         article ="Scam 1992 (2020) was a sensational 10-part series about the making and unmaking of a financial fraudster. A lot separates its protagonist, Harshad Mehta, from Abdul Karim Telgi, the hero of a stand-alone second season. The former excelled in insidious market manipulation; the latter sold counterfeit stamp papers to a margin of thousands of crores. One was a Mumbai-bred Gujarati; the other was a Muslim migrant from Karnataka. Mehta’s vices, if I remember correctly, were limited to expensive cars, cricket games, and a brief flirtation with golf. By contrast, Telgi, a non-smoking, non-drinking prude, once famously splurged lakhs of rupees on a bar dancer he adored. As played by Gagan Dev Riar, he’s an equally colourful — and compelling — character as Mehta. Why, then, does he pack the weaker punch?\n\n" ;
         articlelist.add(article);
+        newslink.add("https://www.imdb.com/title/tt28804856/reviews");
 
-        AdapterClass adapterClass = new AdapterClass(imglist,titlelist,articlelist);
+        AdapterClass adapterClass = new AdapterClass(imglist,titlelist,articlelist,newslink);
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(binding.rv);
         binding.rv.setAdapter(adapterClass);
