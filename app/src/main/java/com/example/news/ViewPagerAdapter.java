@@ -30,15 +30,4 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 2;
     }
-
-    @Override
-    public CharSequence getPageTitle(int position)
-    {
-        String title = null;
-        if (position == 1)
-            title = "Feed";
-        else if (position == 0)
-            title = "Discover";
-        return title;
-    }
 }

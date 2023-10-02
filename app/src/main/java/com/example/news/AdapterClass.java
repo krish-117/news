@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -73,6 +74,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
                     .into(binding.ivwebblur);
+
         }
     }
 }
