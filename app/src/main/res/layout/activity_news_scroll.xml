@@ -5,93 +5,98 @@
 
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/ivblur"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop" />
-
-            <ImageView
-                android:id="@+id/ivimg"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:paddingHorizontal="20dp"
-                android:src="@drawable/back" />
-        </RelativeLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <ScrollView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/ivblur"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/ivimg"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:paddingHorizontal="20dp"
+                    android:src="@drawable/back" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
-                    android:id="@+id/tvarticle"
+                    android:id="@+id/tvtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvtitle" />
-            </ScrollView>
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvarticle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvtitle" />
+                </ScrollView>
 
 
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginVertical="10dp"
-            android:hint="2 hour ago" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:id="@+id/rv">
-
-            <ImageView
-                android:id="@+id/ivwebblur"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:id="@+id/tvlink"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:backgroundTint="#00000000"
-                android:text="Krish dobariya"
-                android:autoLink="web"
-                android:paddingLeft="10dp"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvlink"
-                android:backgroundTint="#00000000"
-                android:text="Tap to more"
-                android:paddingLeft="10dp"/>
+                android:layout_alignParentBottom="true"
+                android:layout_marginVertical="10dp"
+                android:hint="2 hour ago" />
 
-        </RelativeLayout>
-    </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivwebblur"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/tvlink"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:autoLink="web"
+                    android:backgroundTint="#00000000"
+                    android:paddingLeft="10dp"
+                    android:text="Krish dobariya" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvlink"
+                    android:backgroundTint="#00000000"
+                    android:paddingLeft="10dp"
+                    android:text="Tap to more" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
 </layout>
