@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.news.databinding.ActivityMainBinding;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    ActivityMainBinding binding;
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
