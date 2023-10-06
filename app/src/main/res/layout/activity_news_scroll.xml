@@ -37,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginHorizontal="10dp">
 
                 <TextView
                     android:id="@+id/tvtitle"
@@ -46,16 +47,12 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/tvarticle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvtitle" />
-                </ScrollView>
+                <TextView
+                    android:id="@+id/tvarticle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvtitle" />
 
 
             </LinearLayout>
@@ -64,8 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginVertical="10dp"
-                android:hint="2 hour ago" />
+                android:layout_margin="10dp"
+                android:hint="2 hour ago"/>
 
             <RelativeLayout
                 android:id="@+id/rv"
@@ -85,7 +82,7 @@
                     android:layout_height="20dp"
                     android:autoLink="web"
                     android:backgroundTint="#00000000"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="15dp"
                     android:text="Krish dobariya" />
 
                 <TextView
@@ -93,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvlink"
                     android:backgroundTint="#00000000"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="15dp"
                     android:text="Tap to more" />
 
             </RelativeLayout>

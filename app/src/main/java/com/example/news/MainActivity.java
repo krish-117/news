@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.viewPager.setCurrentItem(1);
             }
         });
+
     }
 
     Runnable mUpdateTimeTask = new Runnable() {
@@ -74,10 +75,12 @@ public class MainActivity extends AppCompatActivity {
                 binding.forward.setVisibility(View.VISIBLE);
                 binding.dDiscover.setVisibility(View.VISIBLE);
                 binding.dFeed.setVisibility(View.VISIBLE);
+                binding.setting.setVisibility(View.VISIBLE);
             } else if (binding.viewPager.getCurrentItem() == 1) {
                 binding.forward.setVisibility(View.GONE);
                 binding.dDiscover.setVisibility(View.GONE);
                 binding.dFeed.setVisibility(View.GONE);
+                binding.setting.setVisibility(View.GONE);
 
                 binding.back.setVisibility(View.VISIBLE);
                 binding.fDiscover.setVisibility(View.VISIBLE);
