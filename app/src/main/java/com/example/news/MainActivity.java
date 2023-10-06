@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPager.setCurrentItem(1);
 
         delayhandler = new Handler();
-        delayhandler.postDelayed(mUpdateTimeTask, 1);
+        delayhandler.postDelayed(setTaskbar, 1);
 
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    Runnable mUpdateTimeTask = new Runnable() {
+    Runnable setTaskbar = new Runnable() {
         public void run() {
 
             if (binding.viewPager.getCurrentItem() == 0) {
