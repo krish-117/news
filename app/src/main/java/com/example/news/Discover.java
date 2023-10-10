@@ -24,8 +24,7 @@ public class Discover extends Fragment {
     FragmentDiscoverBinding binding;
 
 
-    List<Integer> imglistCategories = new ArrayList<>();
-    List<String> listCategories = new ArrayList<>();
+    List<ModelCategories> list = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,22 +57,14 @@ public class Discover extends Fragment {
         binding.slider.startAutoCycle();
 
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter();
-        imglistCategories.add(R.drawable.google);
-        listCategories.add("Google");
-        imglistCategories.add(R.drawable.facebook);
-        listCategories.add("Facebook");
-        imglistCategories.add(R.drawable.instagram);
-        listCategories.add("instagram");
-        imglistCategories.add(R.drawable.snapchat);
-        listCategories.add("snapChat");
-        imglistCategories.add(R.drawable.telegram);
-        listCategories.add("telegram");
-        imglistCategories.add(R.drawable.twitter);
-        listCategories.add("Twitter");
-        imglistCategories.add(R.drawable.whatsapp);
-        listCategories.add("whatsapp");
-        categoriesAdapter.add(imglistCategories,listCategories);
+        ModelCategories modelCategories = new ModelCategories("facebook",R.drawable.facebook);
+        list.add(modelCategories);
+         ModelCategories modelCategories1 = new ModelCategories("google",R.drawable.google);
+        list.add(modelCategories1);
+         ModelCategories modelCategories2 = new ModelCategories("instagram",R.drawable.instagram);
+        list.add(modelCategories2);
         GridLayoutManager layoutManager=new GridLayoutManager(getContext(),3);
+        categoriesAdapter.add(list);
         binding.rcv.setLayoutManager(layoutManager);
         binding.rcv.setAdapter(categoriesAdapter);
     }

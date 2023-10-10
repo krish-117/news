@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.news.databinding.CategoriesBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ViewHolder> {
 
-    List<Integer> imglistCategories;
-    List<String> listCategories;
+    List<ModelCategories> list=new ArrayList<>();
 
     @NonNull
     @Override
@@ -30,13 +30,12 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return listCategories.size();
+        return list.size();
     }
 
-    public void add(List<Integer> imglistCategories, List<String> listCategories) {
-
-        this.imglistCategories = imglistCategories;
-        this.listCategories = listCategories;
+    public void add(List<ModelCategories> list) {
+        this.list.addAll(list);
+        notifyItemRangeInserted(this.list.size(),list.size());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,8 +47,8 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         }
 
         public void setData(int position) {
-            binding.ivCategory.setImageResource(imglistCategories.get(position));
-            binding.tvCategory.setText(listCategories.get(position));
+            binding.ivCategory.setImageResource(list.get(position).getImg());
+            binding.tvCategory.setText(list.get(position).getTitle());
         }
     }
 }
