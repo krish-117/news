@@ -41,7 +41,6 @@ public class Discover extends Fragment {
         // Inflate the layout for this fragment
         return binding.getRoot();
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
