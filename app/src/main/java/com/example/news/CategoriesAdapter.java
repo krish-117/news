@@ -38,6 +38,12 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         notifyItemRangeInserted(this.list.size(),list.size());
     }
 
+    public void filterList(List<ModelCategories> filteredlist) {
+
+        list = filteredlist;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         CategoriesBinding binding;
