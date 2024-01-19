@@ -73,7 +73,7 @@ public class Feed extends Fragment {
         articlelist.add(article);
         newslink.add("https://www.imdb.com/title/tt28804856/reviews");
 
-        AdapterClass adapterClass = new AdapterClass(imglist,titlelist,articlelist,newslink);
+        FeedAdapter adapterClass = new FeedAdapter(imglist,titlelist,articlelist,newslink);
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(binding.rv);
         binding.rv.setAdapter(adapterClass);

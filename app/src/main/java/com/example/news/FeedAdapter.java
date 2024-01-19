@@ -18,14 +18,14 @@ import java.util.ArrayList;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
-public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> {
+public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
     Context context;
     ArrayList<Integer> imglist;
     ArrayList<String> titlelist;
     ArrayList<String> articlelist;
      ArrayList<String> newslink;
 
-    public AdapterClass(ArrayList<Integer> imglist, ArrayList<String> titlelist, ArrayList<String> articlelist, ArrayList<String> newslink) {
+    public FeedAdapter(ArrayList<Integer> imglist, ArrayList<String> titlelist, ArrayList<String> articlelist, ArrayList<String> newslink) {
 
         this.imglist = imglist;
         this.titlelist = titlelist;
@@ -35,14 +35,14 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
 
     @NonNull
     @Override
-    public AdapterClass.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FeedAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_news_scroll,parent,false);
         context=parent.getContext();
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterClass.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FeedAdapter.ViewHolder holder, int position) {
         holder.setData(position);
     }
 
