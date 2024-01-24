@@ -1,11 +1,13 @@
 package com.example.news;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.news.databinding.ActivitySettingBinding;
@@ -25,11 +27,11 @@ public class Setting extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_setting);
 
         list.add(new SettingModel(R.drawable.profile,"account"));
-        list.add(new SettingModel(R.drawable.automobile,"notification"));
-        list.add(new SettingModel(R.drawable.automobile,"appearence"));
-        list.add(new SettingModel(R.drawable.automobile,"Privacy and sicurity"));
-        list.add(new SettingModel(R.drawable.automobile,"help and support"));
-        list.add(new SettingModel(R.drawable.automobile,"about"));
+        list.add(new SettingModel(R.drawable.notification,"notification"));
+        list.add(new SettingModel(R.drawable.apperance,"appearence"));
+        list.add(new SettingModel(R.drawable.lock,"Privacy and sicurity"));
+        list.add(new SettingModel(R.drawable.help,"help and support"));
+        list.add(new SettingModel(R.drawable.about,"about"));
 
         adapter = new SettingAdapter(list);
         binding.recycler.setAdapter(adapter);
@@ -40,7 +42,6 @@ public class Setting extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
         binding.searchView.clearFocus();
 
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -54,6 +55,17 @@ public class Setting extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 filter(newText);
                 return false;
+            }
+        });
+
+        binding.switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if (binding.switch1.isChecked()) {
+                   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+               }else{
+                   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
             }
         });
     }

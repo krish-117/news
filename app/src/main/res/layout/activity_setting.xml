@@ -50,5 +50,28 @@
             tools:listitem="@layout/list_setting"
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/darkmode"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dark mode "
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
 </layout>
